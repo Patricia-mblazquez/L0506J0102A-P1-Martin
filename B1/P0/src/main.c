@@ -118,6 +118,9 @@ int main(void)
 	
 	GPIO_InitStruct.Pin = GPIO_PIN_7;
 	HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+	
+	GPIO_InitStruct.Pin = GPIO_PIN_14;
+	HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
 #ifdef RTE_CMSIS_RTOS2
   /* Initialize CMSIS-RTOS2 */
@@ -136,6 +139,8 @@ int main(void)
 		HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_0);
 		HAL_Delay(100);
 		HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_7);
+		HAL_Delay(100);
+		HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_14);
 		HAL_Delay(100);
   }
 }
